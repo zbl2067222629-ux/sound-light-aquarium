@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#090b12" />
+    <title>声光生态缸</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <canvas id="visualizer" aria-hidden="true"></canvas>
+
+    <main class="shell">
+      <header>
+        <div>
+          <p class="eyebrow">MIC → LIGHT</p>
+          <h1>声光生态缸</h1>
+        </div>
+        <div class="status-wrap">
+          <span id="statusDot" class="status-dot"></span>
+          <span id="statusText">等待启动</span>
+        </div>
+      </header>
+
+      <section class="hero-card">
+        <div class="orb-wrap">
+          <div id="orb" class="orb">
+            <div class="orb-shine"></div>
+          </div>
+          <span>实时灯光预览</span>
+        </div>
+
+        <div class="meters">
+          <div class="meter">
+            <div class="meter-label"><span>音量</span><strong id="volumeValue">0</strong></div>
+            <div class="track"><i id="volumeBar"></i></div>
+          </div>
+          <div class="meter">
+            <div class="meter-label"><span>低频</span><strong id="bassValue">0</strong></div>
+            <div class="track bass"><i id="bassBar"></i></div>
+          </div>
+          <div class="meter">
+            <div class="meter-label"><span>中频</span><strong id="midValue">0</strong></div>
+            <div class="track mid"><i id="midBar"></i></div>
+          </div>
+          <div class="meter">
+            <div class="meter-label"><span>高频</span><strong id="trebleValue">0</strong></div>
+            <div class="track treble"><i id="trebleBar"></i></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="controls">
+        <button id="startButton" class="primary">启用麦克风</button>
+        <button id="serialButton" class="secondary" disabled>连接 Arduino</button>
+        <button id="demoButton" class="ghost">演示模式</button>
+      </section>
+
+      <section class="info-grid">
+        <article>
+          <span class="step">01</span>
+          <h2>让 Mac 听见</h2>
+          <p>点击启用麦克风，并允许浏览器访问麦克风。</p>
+        </article>
+        <article>
+          <span class="step">02</span>
+          <h2>连接 Arduino</h2>
+          <p>用 USB 接好开发板，再选择它对应的串口。</p>
+        </article>
+        <article>
+          <span class="step">03</span>
+          <h2>制造一点声音</h2>
+          <p>拍手、说话或播放音乐，灯光会随频率变化。</p>
+        </article>
+      </section>
+
+      <footer>
+        <span>低频 → 红</span>
+        <span>中频 → 绿</span>
+        <span>高频 → 蓝</span>
+      </footer>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
